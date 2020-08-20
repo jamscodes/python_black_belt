@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wish Stats</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid p-3 mb-5 border-bottom border-dark">
+        <div class="row">
+            <div class="col-6">
+                <h1>Hello, {{request.session.logged_user_name}}! These are your stats!</h1>
+            </div>
+            <div class="col-6 d-flex justify-content-end align-items-center">
+                <p class="mb-0 mr-3"><a href="/logout/">Logout</a></p>
+                <p class="mb-0 mr-3"><a href="/wishes/" class="btn btn-primary">Dashboard</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p><b>Total wishes granted for all wishers:</b> {{gw}}</p>
+                <p><b>Your granted wishes:</b> {{lu_gw}}</p>
+                <p><b>Your yet-to-be-granted wishes:</b> {{lu_pw}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

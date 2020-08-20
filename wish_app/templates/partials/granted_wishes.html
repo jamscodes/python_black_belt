@@ -1,0 +1,12 @@
+{% for wish in wishes %}
+    {% if wish.granted %}
+    <tr>
+        <td>{{wish.wish}}</td>
+        <td>{{wish.wisher.f_name}} {{wish.wisher.l_name}}</td>
+        <td>{{wish.created_at}}</td>
+        <td>{{wish.updated_at}}</td>
+        <td>{{wish.likes.all|length}}</td>
+        <td><a href="javascript:void(0)" class="like_wish" data-wish-id="{{wish.id}}" data-wisher-id="{{wish.wisher.id}}">Like</a></td>
+    </tr>
+    {% endif %}
+{% endfor %}
